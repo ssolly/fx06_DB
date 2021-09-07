@@ -3,6 +3,8 @@ package ex01;
 import java.net.URL;
 import java.util.ResourceBundle;
 
+import ex01.AA.LoginService;
+import ex01.AA.LoginServiceImpl;
 import javafx.fxml.Initializable;
 import javafx.scene.Parent;
 import javafx.scene.control.Alert;
@@ -12,11 +14,15 @@ import javafx.scene.control.TextField;
 public class Controller implements Initializable {
 
 	Parent root;
-	public static DBClass db;			//공통사용
+	//public static DBClass db;			//공통사용
+	private ex01.common.db.DBClass comDB;
+	private LoginService ls;
 	
 	@Override
 	public void initialize(URL arg0, ResourceBundle arg1) {
-		db = new DBClass();
+	//	db = new DBClass();				//객체 생성
+		comDB = new ex01.common.db.DBClass();
+		ls = new LoginServiceImpl();
 	}
 	
 	public void setRoot(Parent root) {
@@ -48,6 +54,11 @@ public class Controller implements Initializable {
 	
 	public void login() {
 		
+		//협업시 AA사람 작업
+		ls.loginChk(root);
+		
+		
+		/* 단일 생성시
 		TextField id = (TextField)root.lookup("#fxId");
 		TextField pwd = (TextField)root.lookup("#fxPwd");
 		
@@ -67,6 +78,8 @@ public class Controller implements Initializable {
 				alert.show();
 			}
 		}
+		*/
 	}
+	
 	
 }

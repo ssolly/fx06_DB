@@ -8,7 +8,8 @@ import java.sql.ResultSet;
 public class DBClass {
 
 	public Connection conn;
-	
+
+	/* 단일 생성시
 	public DBClass() {
 		try {
 			//oracle 연결 드라이브 등록
@@ -20,6 +21,7 @@ public class DBClass {
 			e.printStackTrace();
 		}
 	}
+	*/
 	
 	public int insert(MemberDTO dto) {
 		String sql = "insert into FX_MEMBER(id,pwd,name) values(?,?,?)";
@@ -43,6 +45,7 @@ public class DBClass {
 		return result;
 	}
 	
+	/* 단일 작업시
 	public MemberDTO loginChk(String inputId) {
 		//select * from FX_MEMBER where id = ' ';
 		String sql = "select * from FX_MEMBER where id = ?";
@@ -67,4 +70,5 @@ public class DBClass {
 		}
 		return dto;
 	}
+	*/
 }
