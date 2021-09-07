@@ -7,5 +7,6 @@
 		</attributes>
 	</classpathentry>
 	<classpathentry kind="con" path="org.eclipse.jdt.USER_LIBRARY/JavaFx"/>
+	<classpathentry kind="lib" path="C:/Users/최소영/Desktop/KGITBANK/springcloud/java/ojdbc6.jar"/>
 	<classpathentry kind="output" path="bin"/>
 </classpath>
